@@ -1,0 +1,132 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+body {
+  width: 98vw;
+  background-color: #f4ebd9;
+  color: black;
+}
+h1 {
+  font-size: 8vw;
+  font-family: "Playfair Display", serif;
+}
+
+h5 {
+  font-size: 2vw;
+  font-family: "Playfair Display", serif;
+}
+h6 {
+  font-size: 1.5vw;
+  font-family: "Playfair Display", serif;
+}
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5vw;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.container {
+  height: 50vw;
+  display: grid;
+  place-items: center;
+}
+.heading-img {
+  margin-top: 3vw;
+
+  width: 25vw;
+  border-radius: 50%;
+}
+
+.headings {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  place-items: end center;
+
+  height: 28vw;
+}
+
+.head {
+  margin-top: 8vw;
+}
+.head > div {
+  margin-top: 9vw;
+}
+
+.heading-text {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 5vw;
+  height: 100%;
+}
+.heading-img2 {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  margin-bottom: 10vw;
+}
+
+.portfolio-date {
+  background-color: black;
+  color: antiquewhite;
+  padding: 1vw;
+  border-radius: 4vw;
+  display: grid;
+  place-items: center;
+}
+
+.about {
+  margin: 10vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+  place-items: center;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.about-img {
+  width: 40vw;
+  height: 30vw;
+  border-radius: 12vw;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  object-fit: cover;
+}
+
+.about-text {
+  margin-top: 25vw;
+  padding-right: 5vw;
+}
+
+.about-header-container {
+  gap: 0.5vw;
+  display: grid;
+  place-items: center end;
+  grid-template-columns: 4fr 1fr;
+  margin-left: 20vw;
+}
+
+.about-header-icon {
+  width: 8vw;
+}
+
+.about-footer {
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 1fr 2fr 2fr;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.about-footer > div {
+  background-color: black;
+  height: 3px;
+  margin-top: 1vw;
+  border-radius: 100vw;
+  margin-right: 1.5vw;
+}
