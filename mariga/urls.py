@@ -5,6 +5,13 @@ from . import views, api_views
 
 urlpatterns = [
   path('', views.welcome,name = 'test'),
-  path('api/all_projects/', api_views.ProjectList.as_view())
+
+
+  path('api/all_projects/', api_views.ProjectList.as_view()),
+  path('api/all_comments/', api_views.CommentsList.as_view()),
+  path('api/database_projects/<database>', api_views.ProjectByDatabase.as_view()),
+  path('api/tools_projects/<tools>', api_views.ProjectByTools.as_view()),
+  path('api/languages_projects/<languages>', api_views.ProjectByLanguages.as_view()),
+  path('api/framework_projects/<framework>', api_views.ProjectByFrameworks.as_view()),
 
 ]

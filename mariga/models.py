@@ -99,7 +99,13 @@ class Comments(models.Model):
 	project = models.ForeignKey(Projects, on_delete=models.CASCADE)
 
 	def __str__(self):
-		c
+		return str(f"name-{self.name}, date- {self.date}")
 
 	class Meta:
 			verbose_name_plural  =  "Comments"  
+
+
+	@classmethod
+	def get_all(cls):
+		comments = cls.objects.all()
+		return comments

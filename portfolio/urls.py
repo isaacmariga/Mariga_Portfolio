@@ -20,3 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mariga.urls'))
 ]
+
+
+admin.site.site_header  =  "Portfolio admin"  
+admin.site.site_title  =  "Portfolio admin site"
+admin.site.index_title  =  "Portfolio Admin"
