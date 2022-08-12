@@ -17,11 +17,11 @@ from decouple import config,Csv
 import dj_database_url
 
 
-MODE=config('MODE', default='prod')
+MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 # development
-if config('MODE')=='prod':
+if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -41,9 +41,10 @@ else:
        )
    }
 
-
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
