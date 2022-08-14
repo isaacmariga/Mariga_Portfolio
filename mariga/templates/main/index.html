@@ -1,73 +1,12 @@
-{% extends 'main/base.html' %}
-{% load static%}
-{% load django_bootstrap5%}
-
-{% block content %}
-{{block.super}}
-<section>
-  <div class="container">
-    <div class="headings">
-      <div class="head">
-        <h5>ISAAC MARIGA WANGOMBE</h5>
-        <div>
-          <h1>PORTFOLIO</h1>
-        </div>
-
-      </div>
-      <img class="heading-img" src="/static/images/me.jpeg" alt="">
-    </div>
-    <div class="heading-text">
-      <img class="heading-img2" src="/static/images/comp1.jpg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio iure ullam labore architecto aliquid, doloribus
-        necessitatibus magni at cumque quidem nemo expedita accusamus, qui voluptatem!</p>
-      <span class="portfolio-date">
-        <h5>2021-2022</h5>
-      </span>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="about-header-container">
-      <h1 class="about-header">WHO AM I</h1>
-      <span>
-        <img class="about-header-icon" src="/static/images/sun.png" alt=""></span>
-    </div>
-    <div class="about">
-      <img class="about-img" src="/static/images/comp2.jpg" alt="">
-      <p class="about-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque quisquam, magni velit
-        deserunt in nihil incidunt, iusto, provident illum nam adipisci aut voluptatum ab fuga.</p>
-    </div>
-
-  </div>
-  <div class="about-footer">
-    <h6>ISAAC WANGOMBE</h6>
-    <div> </div>
-    <h6>SOFTWARE DEVELOPER PORTFOLIO</h6>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <h5>PORTFOLIO</h5>
-    <div class=" cont col-xs-12 col-sm-6  col-md-6  col-lg-4 ">
-      <div>
-        <div data-toggle="modal" data-target="#{{image.id}}">
-          <div class="hover hover-4 text-white rounded"><img src="{{image.image.url}}" alt="">
-            <div class="hover-overlay"></div>
-            <div class="hover-4-content">
-              <h3 class="hover-4-title text-uppercase font-weight-bold mb-0">{{image.title}}</h3>
-              <p class="hover-4-description text-uppercase mb-0 small">{{image.description}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cat list-inline ">
-        Categories: {% for category in image.category.all %}
-        <li class="button list-inline-item">{{ category }}</li>{% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-{% endblock %}
+<h1>API Links</h1>
+<p><strong>All Comments: </strong>https://marigaportfolio.herokuapp.com/api/all_comments/</p>
+<p><strong>All Portfolios: </strong>https://marigaportfolio.herokuapp.com/api/all_projects</p>
+<p><strong>By DB: </strong>https://marigaportfolio.herokuapp.com/api/database_projects/
+  {database}
+</p>
+<p><strong>By Language: </strong>https://marigaportfolio.herokuapp.com/api/languages_projects/{languages}
+</p>
+<p><strong>By Framework: </strong>https://marigaportfolio.herokuapp.com/api/framework_projects/{framework}
+</p>
+<p><strong>By Tools: </strong>https://marigaportfolio.herokuapp.com/api/tools_projects/{tools}
+</p>
