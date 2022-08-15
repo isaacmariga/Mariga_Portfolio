@@ -2,6 +2,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Projects, Comments, Languages, Frameworks, Tools, Databases
 from .serializer import ProjectSerializer, CommentsSerializer, LanguagesSerializer, FrameworksSerializer, DatabasesSerializer, ToolsSerializer
+from django.http import Http404
 
 
 class ProjectList(APIView):
@@ -15,6 +16,7 @@ class LanguagesList(APIView):
     all_items = Languages.get_all()
     serializers = LanguagesSerializer(all_items, many=True)
     return Response(serializers.data)
+
 
 class FrameworksList(APIView):
   def get(self, request, format=None):
@@ -38,6 +40,8 @@ class ProjectByDatabase(APIView):
   def get(self, request,database, format=None):
     all_projects = Projects.filter_database(database)
     serializers = ProjectSerializer(all_projects, many=True)
+    if not serializers:
+          raise Http404("No MyModel matches the given query.")
     return Response(serializers.data)
 
 class ProjectByTools(APIView):

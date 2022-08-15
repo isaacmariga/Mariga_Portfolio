@@ -16,9 +16,9 @@ class Languages(models.Model):
 		items = cls.objects.all()
 		return items
 
-		
+
 class Frameworks(models.Model):
-	framework = models.CharField(max_length =30)
+	framework = models.CharField(max_length =30, blank=True, null=True)
 	def __str__(self):
 		return self.framework
 
@@ -33,7 +33,7 @@ class Frameworks(models.Model):
 		return items
 
 class Tools(models.Model):
-	tool = models.CharField(max_length =30)
+	tool = models.CharField(max_length =30, blank=True, null=True)
 	def __str__(self):
 		return self.tool
 
@@ -47,7 +47,7 @@ class Tools(models.Model):
 		return items
 
 class Databases(models.Model):
-	database = models.CharField(max_length =30)
+	database = models.CharField(max_length =30, blank=True, null=True)
 	def __str__(self):
 		return self.database
 
@@ -87,7 +87,7 @@ class Projects(models.Model):
 
 	@classmethod
 	def filter_languages(cls, languages):
-		projects = cls.objects.filter(languages_language=languages)
+		projects = cls.objects.filter(languages=languages)
 		return projects
 
 	@classmethod
