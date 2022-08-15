@@ -82,7 +82,7 @@ class Projects(models.Model):
 
 	@classmethod
 	def filter_framework(cls, framework):
-		projects = cls.objects.filter(framework=framework)
+		projects = cls.objects.filter(frameworks=framework)
 		return projects
 
 	@classmethod
