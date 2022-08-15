@@ -64,9 +64,9 @@ class Projects(models.Model):
 	details = models.TextField(max_length =300)
 	date = models.DateField(auto_now_add=False) 
 	languages = models.ManyToManyField(Languages)
-	frameworks = models.ManyToManyField(Frameworks, blank=True, null=True)
-	tools = models.ManyToManyField(Tools, blank=True, null=True)
-	database = models.ManyToManyField(Databases, blank=True, null=True)
+	frameworks = models.ManyToManyField(Frameworks, blank=True)
+	tools = models.ManyToManyField(Tools, blank=True)
+	database = models.ManyToManyField(Databases, blank=True)
 	image = models.ImageField(upload_to = 'articles/')
 
 	def __str__(self):
