@@ -10,6 +10,13 @@ class Languages(models.Model):
 	class Meta:
 			verbose_name_plural  =  "Languages"  
 
+
+	@classmethod
+	def get_all(cls):
+		items = cls.objects.all()
+		return items
+
+		
 class Frameworks(models.Model):
 	framework = models.CharField(max_length =30)
 	def __str__(self):
@@ -18,6 +25,12 @@ class Frameworks(models.Model):
 	class Meta:
 			verbose_name_plural  =  "Frameworks"  
 
+
+
+	@classmethod
+	def get_all(cls):
+		items = cls.objects.all()
+		return items
 
 class Tools(models.Model):
 	tool = models.CharField(max_length =30)
@@ -28,6 +41,11 @@ class Tools(models.Model):
 			verbose_name_plural  =  "Tools"  
 
 
+	@classmethod
+	def get_all(cls):
+		items = cls.objects.all()
+		return items
+
 class Databases(models.Model):
 	database = models.CharField(max_length =30)
 	def __str__(self):
@@ -35,6 +53,12 @@ class Databases(models.Model):
 
 	class Meta:
 			verbose_name_plural  =  "Databases"  
+
+
+	@classmethod
+	def get_all(cls):
+		items = cls.objects.all()
+		return items
 class Projects(models.Model):
 	name = models.CharField(max_length =30)
 	details = models.TextField(max_length =300)
@@ -63,7 +87,7 @@ class Projects(models.Model):
 
 	@classmethod
 	def filter_languages(cls, languages):
-		projects = cls.objects.filter(languages=languages)
+		projects = cls.objects.filter(languages_language=languages)
 		return projects
 
 	@classmethod
