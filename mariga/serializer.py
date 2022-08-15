@@ -23,7 +23,7 @@ class FrameworksSerializer(serializers.ModelSerializer):
   
   class Meta:
     model = Frameworks
-    fields = ('id','framework')
+    fields = ('id','frameworks')
 
 class ToolsSerializer(serializers.ModelSerializer):
   
